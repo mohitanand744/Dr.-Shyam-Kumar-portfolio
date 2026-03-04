@@ -1,8 +1,12 @@
+"use client";
+
 import Image from "next/image";
 import Link from "next/link";
 import { ArrowRight, CheckCircle2 } from "lucide-react";
+import { useLanguage } from "@/context/LanguageContext";
 
 export default function Hero() {
+  const { t } = useLanguage();
   return (
     <section
 
@@ -26,42 +30,42 @@ export default function Hero() {
                 <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-blue-400 opacity-75"></span>
                 <span className="relative inline-flex rounded-full h-2 w-2 bg-blue-500"></span>
               </span>
-              Accepting Home Visit Appointments in Patna
+              {t("hero.badge")}
             </div>
 
             <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-[4.5rem] font-extrabold text-slate-900 leading-[1.1] mb-6 tracking-tight">
-              Advanced healing for <br className="hidden md:block" />
+              {t("hero.heading1")} <br className="hidden md:block" />
               <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary-600 to-blue-500">
-                all kinds of diseases.
+                {t("hero.heading2")}
               </span>
             </h1>
 
             <p className="text-base sm:text-lg md:text-xl text-slate-600 mb-8 leading-relaxed max-w-3xl mx-auto">
-              Experience modern machines and advanced physiotherapy treatments designed to release stuck nerves and effectively treat your pain—completely free of side effects.
+              {t("hero.description")}
             </p>
 
             <div className="flex flex-col sm:flex-row items-center justify-center gap-4 mb-10">
               <Link href="#contact" className="w-full sm:w-auto inline-flex justify-center items-center gap-2 bg-primary-600 text-white px-8 py-4 rounded-full text-base font-semibold hover:bg-primary-600 transition-all shadow-lg hover:shadow-xl hover:-translate-y-0.5 group">
-                Book Home Visit
+                {t("hero.bookVisit")}
                 <ArrowRight size={18} className="group-hover:translate-x-1 transition-transform" />
               </Link>
               <Link href="#contact" className="w-full sm:w-auto inline-flex justify-center items-center gap-2 bg-white text-slate-800 border border-slate-200 px-8 py-4 rounded-full text-base font-semibold hover:bg-slate-50 transition-all shadow-sm hover:border-slate-300">
-                Free Consultation
+                {t("hero.freeConsultation")}
               </Link>
             </div>
 
             <div className="flex flex-wrap items-center justify-center gap-3 sm:gap-4 text-sm font-medium text-slate-700">
               <div className="flex items-center gap-2 bg-white px-4 py-2.5 rounded-xl shadow-sm border border-slate-100">
                 <CheckCircle2 className="w-4 h-4 text-green-500" />
-                No Side Effects
+                {t("hero.noSideEffects")}
               </div>
               <div className="flex items-center gap-2 bg-white px-4 py-2.5 rounded-xl shadow-sm border border-slate-100">
                 <CheckCircle2 className="w-4 h-4 text-primary-500" />
-                Modern Equipment
+                {t("hero.modernEquipment")}
               </div>
               <div className="flex items-center gap-2 bg-white px-4 py-2.5 rounded-xl shadow-sm border border-slate-100">
                 <CheckCircle2 className="w-4 h-4 text-blue-500" />
-                Home Visits
+                {t("hero.homeVisits")}
               </div>
             </div>
           </div>
@@ -91,8 +95,8 @@ export default function Hero() {
                     <svg className="w-6 h-6 text-orange-500" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path></svg>
                   </div>
                   <div>
-                    <p className="text-sm md:text-base font-bold text-slate-900">10+ Years</p>
-                    <p className="text-xs md:text-sm text-slate-500 font-medium">Experience</p>
+                    <p className="text-sm md:text-base font-bold text-slate-900">{t("hero.experienceYears")}</p>
+                    <p className="text-xs md:text-sm text-slate-500 font-medium">{t("hero.experienceText")}</p>
                   </div>
                 </div>
               </div>

@@ -2,8 +2,10 @@
 
 import { useState } from "react";
 import { HelpCircle, ChevronDown } from "lucide-react";
+import { useLanguage } from "@/context/LanguageContext";
 
 export default function FAQ() {
+  const { t } = useLanguage();
   const [openIndex, setOpenIndex] = useState<number | null>(0);
 
   const toggleFaq = (index: number) => {
@@ -12,20 +14,20 @@ export default function FAQ() {
 
   const faqs = [
     {
-      question: "Do you offer home visits?",
-      answer: "Yes! We specialize in Home Visit Appointments in Patna for patients who cannot travel to the clinic, ensuring they receive uninterrupted rehabilitation from the comfort of their home.",
+      question: t("faq.q1"),
+      answer: t("faq.a1"),
     },
     {
-      question: "Do treatments have any side effects?",
-      answer: "No. Our physiotherapy treatments and the modern machines we use are completely safe and do not cause any adverse side effects. Our focus is on natural healing and movement.",
+      question: t("faq.q2"),
+      answer: t("faq.a2"),
     },
     {
-      question: "What should I expect during a free consultation?",
-      answer: "During your free consultation, Dr. Shyam Kumar will assess your condition, listen to your concerns, and outline a customized treatment plan tailored specifically to your pain or injury.",
+      question: t("faq.q3"),
+      answer: t("faq.a3"),
     },
     {
-      question: "How long is a typical physiotherapy session?",
-      answer: "A single session usually lasts between 45 to 60 minutes depending on the condition being treated and the therapies required.",
+      question: t("faq.q4"),
+      answer: t("faq.a4"),
     },
   ];
 
@@ -34,10 +36,10 @@ export default function FAQ() {
       <div className="container mx-auto px-4 max-w-4xl">
         <div className="text-center mb-16">
           <h2 className="text-3xl md:text-4xl font-bold text-slate-900 mb-4 tracking-tight flex items-center justify-center gap-3">
-            <HelpCircle className="text-primary-600" size={36} /> Frequently Asked Questions
+            <HelpCircle className="text-primary-600" size={36} /> {t("faq.title")}
           </h2>
           <p className="text-lg text-slate-600">
-            Find answers to common questions about our physiotherapy services.
+            {t("faq.description")}
           </p>
         </div>
 

@@ -3,9 +3,11 @@
 import Link from "next/link";
 import { useState } from "react";
 import { Phone, MapPin, Menu, X } from "lucide-react";
+import { useLanguage } from "@/context/LanguageContext";
 
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
+  const { t, language, toggleLanguage } = useLanguage();
 
   const toggleMenu = () => {
     setIsOpen(!isOpen);
@@ -18,7 +20,7 @@ export default function Navbar() {
         <div className="container mx-auto flex flex-col md:flex-row justify-between items-center max-w-7xl">
           <div className="flex items-center gap-2 mb-1.5 md:mb-0">
             <Phone size={14} className="opacity-80" />
-            <span className="font-medium tracking-wide">Call for Appointment / Home Visit</span>
+            <span className="font-medium tracking-wide">{t("navbar.callForAppt")}</span>
           </div>
           <div className="flex items-center gap-3">
             <div className="hidden sm:flex items-center gap-1.5 opacity-90 hover:opacity-100 transition-opacity">
@@ -27,7 +29,7 @@ export default function Navbar() {
             <span className="hidden sm:inline-block w-px h-4 bg-white/30"></span>
             <div className="flex items-center gap-1.5 opacity-90">
               <MapPin size={14} />
-              <span className="truncate">New Jaganpura, Patna 800027</span>
+              <span className="truncate">{t("navbar.address")}</span>
             </div>
           </div>
         </div>
@@ -38,33 +40,47 @@ export default function Navbar() {
         <div className="flex justify-between items-center">
           <Link href="/" className="flex flex-col group" onClick={() => setIsOpen(false)}>
             <span className="text-2xl font-black text-slate-900 tracking-tight group-hover:text-primary-700 transition-colors">
-              Dr. Shyam Kumar
+              {t("navbar.title")}
             </span>
             <span className="text-[0.8rem] font-bold text-primary-600 uppercase tracking-widest mt-0.5">
-              Physiotherapy Consultant
+              {t("navbar.subtitle")}
             </span>
           </Link>
 
           {/* Desktop Menu */}
           <div className="hidden lg:flex items-center gap-8 font-semibold text-slate-600">
-            <Link href="#about" className="hover:text-primary-600 transition-colors py-2">About</Link>
-            <Link href="#services" className="hover:text-primary-600 transition-colors py-2">Services</Link>
-            <Link href="#doctors" className="hover:text-primary-600 transition-colors py-2">Dr. Shyam Kumar</Link>
-            <Link href="#faq" className="hover:text-primary-600 transition-colors py-2">FAQ</Link>
+            <Link href="#about" className="hover:text-primary-600 transition-colors py-2">{t("navbar.navAbout")}</Link>
+            <Link href="#services" className="hover:text-primary-600 transition-colors py-2">{t("navbar.navServices")}</Link>
+            <Link href="#doctors" className="hover:text-primary-600 transition-colors py-2">{t("navbar.navDoctor")}</Link>
+            <Link href="#faq" className="hover:text-primary-600 transition-colors py-2">{t("navbar.navFAQ")}</Link>
             <a href="#contact" className="ml-2 bg-slate-900 text-white px-6 py-2.5 rounded-full hover:bg-primary-600 transition-all font-bold shadow-md hover:shadow-lg inline-block hover:-translate-y-0.5">
-              Free Consultation
+              {t("navbar.freeConsultation")}
             </a>
+            <button
+              onClick={toggleLanguage}
+              className="ml-2 bg-primary-50 text-primary-700 border border-primary-200 px-3 py-1.5 rounded-md text-sm font-bold shadow-sm hover:bg-primary-100 transition-colors"
+            >
+              {language === 'en' ? 'HI' : 'EN'}
+            </button>
           </div>
 
           {/* Mobile Menu Button */}
-          <button
-            type="button"
-            className="lg:hidden text-slate-900 hover:text-primary-600 transition-colors p-2 -mr-2 focus:outline-none"
-            onClick={toggleMenu}
-            aria-label="Toggle Navigation"
-          >
-            {isOpen ? <X size={28} /> : <Menu size={28} />}
-          </button>
+          <div className="lg:hidden flex items-center gap-3">
+            <button
+              onClick={toggleLanguage}
+              className="bg-primary-50 text-primary-700 border border-primary-200 px-2 py-1 rounded-md text-xs font-bold shadow-sm hover:bg-primary-100 transition-colors"
+            >
+              {language === 'en' ? 'HI' : 'EN'}
+            </button>
+            <button
+              type="button"
+              className="text-slate-900 hover:text-primary-600 transition-colors pb-1 focus:outline-none"
+              onClick={toggleMenu}
+              aria-label="Toggle Navigation"
+            >
+              {isOpen ? <X size={28} /> : <Menu size={28} />}
+            </button>
+          </div>
         </div>
       </div>
 
@@ -79,28 +95,28 @@ export default function Navbar() {
             className="px-4 py-3 text-slate-700 font-semibold rounded-xl hover:bg-slate-50 transition-colors"
             onClick={() => setIsOpen(false)}
           >
-            About
+            {t("navbar.navAbout")}
           </Link>
           <Link
             href="#services"
             className="px-4 py-3 text-slate-700 font-semibold rounded-xl hover:bg-slate-50 transition-colors"
             onClick={() => setIsOpen(false)}
           >
-            Services
+            {t("navbar.navServices")}
           </Link>
           <Link
             href="#doctors"
             className="px-4 py-3 text-slate-700 font-semibold rounded-xl hover:bg-slate-50 transition-colors"
             onClick={() => setIsOpen(false)}
           >
-            Dr. Shyam Kumar
+            {t("navbar.navDoctor")}
           </Link>
           <Link
             href="#faq"
             className="px-4 py-3 text-slate-700 font-semibold rounded-xl hover:bg-slate-50 transition-colors"
             onClick={() => setIsOpen(false)}
           >
-            FAQ
+            {t("navbar.navFAQ")}
           </Link>
           <div className="pt-2 pb-2 mt-2 border-t border-slate-100 px-4">
             <a
@@ -108,7 +124,7 @@ export default function Navbar() {
               className="flex justify-center w-full bg-primary-600 text-white px-6 py-3 rounded-full font-bold shadow-md"
               onClick={() => setIsOpen(false)}
             >
-              Free Consultation
+              {t("navbar.freeConsultation")}
             </a>
           </div>
         </div>

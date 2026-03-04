@@ -1,7 +1,11 @@
+"use client";
+
 import Image from "next/image";
 import { Award, CheckCircle, ArrowRight, ShieldCheck, HeartPulse } from "lucide-react";
+import { useLanguage } from "@/context/LanguageContext";
 
 export default function Doctors() {
+  const { t } = useLanguage();
   return (
     <section id="doctors" className="py-24 relative overflow-hidden">
       {/* 50px Grid Background Pattern */}
@@ -16,10 +20,10 @@ export default function Doctors() {
 
       <div className="container mx-auto px-4 max-w-7xl relative z-10">
         <div className="text-center max-w-3xl mx-auto mb-16">
-          <span className="text-primary-600 font-bold uppercase tracking-wider text-sm mb-3 block">Expert Care</span>
-          <h2 className="text-3xl md:text-5xl font-extrabold text-slate-900 mb-6 tracking-tight">Meet Dr. Shyam Kumar</h2>
+          <span className="text-primary-600 font-bold uppercase tracking-wider text-sm mb-3 block">{t("doctors.subtitle")}</span>
+          <h2 className="text-3xl md:text-5xl font-extrabold text-slate-900 mb-6 tracking-tight">{t("doctors.title")}</h2>
           <p className="text-lg text-slate-600">
-            Highly qualified and experienced physiotherapist dedicated to your recovery, mobility, and overall well-being.
+            {t("doctors.description")}
           </p>
         </div>
 
@@ -53,11 +57,11 @@ export default function Doctors() {
             {/* Content Side */}
             <div className="text-center md:text-left flex-1 relative z-10 pt-2 md:pt-4">
               <div className="inline-flex items-center gap-1.5 px-4 py-1.5 rounded-full bg-blue-50 text-blue-700 text-xs font-bold uppercase tracking-wider mb-5 shadow-sm border border-blue-100/50">
-                Lead Consultant & Founder
+                {t("doctors.badge")}
               </div>
 
-              <h3 className="text-3xl md:text-4xl font-black text-slate-900 mb-2 tracking-tight">Dr. Shyam Kumar</h3>
-              <p className="text-primary-600 font-semibold mb-6 text-lg md:text-xl">Chief Physiotherapy Consultant</p>
+              <h3 className="text-3xl md:text-4xl font-black text-slate-900 mb-2 tracking-tight">{t("doctors.name")}</h3>
+              <p className="text-primary-600 font-semibold mb-6 text-lg md:text-xl">{t("doctors.role")}</p>
 
               <div className="h-px w-full bg-gradient-to-r from-slate-100 via-slate-200 to-transparent mb-6"></div>
 
@@ -66,24 +70,24 @@ export default function Doctors() {
                   <div className="bg-green-50 text-green-600 p-1.5 rounded-full shrink-0 mt-0.5">
                     <CheckCircle className="w-5 h-5" />
                   </div>
-                  <span className="font-medium text-start text-slate-800">Expert in Pain Management & Postural Correction</span>
+                  <span className="font-medium text-start text-slate-800">{t("doctors.point1")}</span>
                 </li>
                 <li className="flex items-start gap-3 md:gap-4 justify-start">
                   <div className="bg-primary-50 text-primary-600 p-1.5 rounded-full shrink-0 mt-0.5">
                     <CheckCircle className="w-5 h-5" />
                   </div>
-                  <span className="text-start">Advanced Joint Manipulation & Sports Rehab</span>
+                  <span className="text-start">{t("doctors.point2")}</span>
                 </li>
                 <li className="flex items-start gap-3 md:gap-4 justify-start">
                   <div className="bg-rose-50 text-rose-500 p-1.5 rounded-full shrink-0 mt-0.5">
                     <HeartPulse className="w-5 h-5" />
                   </div>
-                  <span className="text-start">Holistic, non-invasive therapies with zero side effects</span>
+                  <span className="text-start">{t("doctors.point3")}</span>
                 </li>
               </ul>
 
               <a href="#contact" className="inline-flex items-center justify-center gap-2 w-full md:w-auto px-8 py-3.5 bg-slate-900 text-white rounded-xl font-semibold hover:bg-primary-600 transition-colors shadow-md hover:shadow-lg group/btn">
-                Book a Consultation
+                {t("doctors.button")}
                 <ArrowRight size={18} className="group-hover/btn:translate-x-1 transition-transform" />
               </a>
             </div>
@@ -93,7 +97,7 @@ export default function Doctors() {
             {/* Note about home visits below the card to draw attention */}
             <div className="inline-flex items-center gap-3 px-6 py-4 bg-emerald-50 border border-emerald-100 rounded-2xl shadow-sm text-emerald-800">
               <ShieldCheck className="text-emerald-500 shrink-0" size={24} />
-              <span className="font-semibold text-sm sm:text-base">Specialized Home Visit Treatments Available in Patna</span>
+              <span className="font-semibold text-sm sm:text-base">{t("doctors.homeVisitNote")}</span>
             </div>
           </div>
 
