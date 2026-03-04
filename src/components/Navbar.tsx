@@ -51,7 +51,7 @@ export default function Navbar() {
             <span className="font-medium tracking-wide">{t("navbar.callForAppt")}</span>
           </div>
           <div className="flex items-center gap-3">
-            <div className="hidden sm:flex items-center gap-1.5 opacity-90 hover:opacity-100 transition-opacity">
+            <div className="hidden sm:flex items-center gap-1.5 opacity-90 hover:opacity-100 ff transition-opacity">
               <a href="tel:+919000000000" className="font-semibold">+91 XXXXXXXXXX</a>
             </div>
             <span className="hidden sm:inline-block w-px h-4 bg-white/30"></span>
