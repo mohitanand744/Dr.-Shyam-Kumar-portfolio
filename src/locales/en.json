@@ -102,5 +102,33 @@
     "call": "Call for Appointment",
     "freeConsultation": "Free Consultation Available",
     "copyright": "© {year} Dr. Shyam Kumar Physiotherapy Consultant. All rights reserved."
+  },
+  "testimonials": {
+    "title": "Patient Stories & Success",
+    "description": "Read what our patients have to say about their recovery journeys and how physiotherapy helped them reclaim their lives.",
+    "rev1": {
+      "name": "Rajesh Verma",
+      "condition": "Slip Disc & Sciatica",
+      "comment": "I was suffering from severe back pain for months. Dr. Shyam's treatment helped me recover without any surgery. Highly recommend his home visit services!",
+      "rating": "5.0"
+    },
+    "rev2": {
+      "name": "Meera Devi",
+      "condition": "Knee Replacement Rehab",
+      "comment": "The post-surgery home visits were a blessing. I can walk comfortably now thanks to his expert guidance and modern therapy techniques.",
+      "rating": "4.9"
+    },
+    "rev3": {
+      "name": "Amit Shah",
+      "condition": "Frozen Shoulder",
+      "comment": "Complete relief in just 10 sessions! The focused approach and personalized care made all the difference. Very professional treatment.",
+      "rating": "5.0"
+    },
+    "rev4": {
+      "name": "Priya Singh",
+      "condition": "Nerve Weakness",
+      "comment": "Truly the best physiotherapy consultant in Patna. The non-invasive treatments are highly effective and safe. My mobility has improved significantly.",
+      "rating": "4.8"
+    }
   }
 }
