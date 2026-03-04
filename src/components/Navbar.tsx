@@ -2,7 +2,7 @@
 
 import Link from "next/link";
 import { useState } from "react";
-import { Phone, MapPin, Menu, X } from "lucide-react";
+import { Phone, MapPin, Menu, X, Languages } from "lucide-react";
 import { useLanguage } from "@/context/LanguageContext";
 
 export default function Navbar() {
@@ -12,6 +12,34 @@ export default function Navbar() {
   const toggleMenu = () => {
     setIsOpen(!isOpen);
   };
+
+  const LanguageToggle = ({ className = "" }: { className?: string }) => (
+    <div className={`flex items-center gap-2 bg-slate-50 p-1 rounded-full border border-slate-200 shadow-sm transition-all ${className}`}>
+      <div className="pl-1.5 text-slate-400">
+        <Languages size={15} />
+      </div>
+      <div className="flex bg-white rounded-full overflow-hidden p-0.5 border border-slate-100">
+        <button
+          onClick={() => language !== 'en' && toggleLanguage()}
+          className={`px-3 py-1 text-[10px] sm:text-xs font-bold transition-all rounded-full ${language === 'en'
+            ? 'bg-primary-600 text-white shadow-sm'
+            : 'text-slate-400 hover:text-primary-600 hover:bg-slate-50'
+            }`}
+        >
+          EN
+        </button>
+        <button
+          onClick={() => language !== 'hi' && toggleLanguage()}
+          className={`px-3 py-1 text-[10px] sm:text-xs font-bold transition-all rounded-full ${language === 'hi'
+            ? 'bg-primary-600 text-white shadow-sm'
+            : 'text-slate-400 hover:text-primary-600 hover:bg-slate-50'
+            }`}
+        >
+          HI
+        </button>
+      </div>
+    </div>
+  );
 
   return (
     <nav className="bg-white sticky top-0 z-50 shadow-sm relative">
@@ -39,10 +67,10 @@ export default function Navbar() {
       <div className="container mx-auto px-4 py-3.5 max-w-7xl">
         <div className="flex justify-between items-center">
           <Link href="/" className="flex flex-col group" onClick={() => setIsOpen(false)}>
-            <span className="text-2xl font-black text-slate-900 tracking-tight group-hover:text-primary-700 transition-colors">
+            <span className="text-lg md:text-2xl font-black text-slate-900 tracking-tight group-hover:text-primary-700 transition-colors">
               {t("navbar.title")}
             </span>
-            <span className="text-[0.8rem] font-bold text-primary-600 uppercase tracking-widest mt-0.5">
+            <span className="text-[0.6rem] md:text-[0.8rem] font-bold text-primary-600 uppercase tracking-widest mt-0.3">
               {t("navbar.subtitle")}
             </span>
           </Link>
@@ -56,22 +84,12 @@ export default function Navbar() {
             <a href="#contact" className="ml-2 bg-slate-900 text-white px-6 py-2.5 rounded-full hover:bg-primary-600 transition-all font-bold shadow-md hover:shadow-lg inline-block hover:-translate-y-0.5">
               {t("navbar.freeConsultation")}
             </a>
-            <button
-              onClick={toggleLanguage}
-              className="ml-2 bg-primary-50 text-primary-700 border border-primary-200 px-3 py-1.5 rounded-md text-sm font-bold shadow-sm hover:bg-primary-100 transition-colors"
-            >
-              {language === 'en' ? 'HI' : 'EN'}
-            </button>
+            <LanguageToggle className="ml-2" />
           </div>
 
           {/* Mobile Menu Button */}
           <div className="lg:hidden flex items-center gap-3">
-            <button
-              onClick={toggleLanguage}
-              className="bg-primary-50 text-primary-700 border border-primary-200 px-2 py-1 rounded-md text-xs font-bold shadow-sm hover:bg-primary-100 transition-colors"
-            >
-              {language === 'en' ? 'HI' : 'EN'}
-            </button>
+            <LanguageToggle />
             <button
               type="button"
               className="text-slate-900 hover:text-primary-600 transition-colors pb-1 focus:outline-none"
