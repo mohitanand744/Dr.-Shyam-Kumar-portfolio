@@ -3,9 +3,11 @@
 import Link from "next/link";
 import { Phone, MapPin, Mail, Clock } from "lucide-react";
 import { useLanguage } from "@/context/LanguageContext";
+import { useModal } from "@/context/ModalContext";
 
 export default function Footer() {
   const { t } = useLanguage();
+  const { openConsultation } = useModal();
 
   return (
     <footer className="bg-slate-900 text-slate-300 py-12 border-t border-slate-800">
@@ -46,11 +48,18 @@ export default function Footer() {
               </li>
               <li className="flex items-center gap-3">
                 <Phone className="text-primary-500 shrink-0" size={20} />
-                <span>{t("footer.call")}</span>
+                <a href={`tel:${t("common.phoneNumberRaw")}`} className="hover:text-primary-400 transition-colors">
+                  {t("footer.call")}: <span className="font-semibold text-white">{t("common.phoneNumber")}</span>
+                </a>
               </li>
               <li className="flex items-center gap-3">
                 <Clock className="text-primary-500 shrink-0" size={20} />
-                <span className="font-semibold text-white">{t("footer.freeConsultation")}</span>
+                <button
+                  onClick={openConsultation}
+                  className="font-semibold text-white hover:text-primary-400 transition-colors text-left"
+                >
+                  {t("footer.freeConsultation")}
+                </button>
               </li>
             </ul>
           </div>

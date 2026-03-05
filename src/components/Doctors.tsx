@@ -1,11 +1,13 @@
 "use client";
 
 import Image from "next/image";
-import { Award, CheckCircle, ArrowRight, ShieldCheck, HeartPulse } from "lucide-react";
+import { Award, CheckCircle, ArrowRight, ShieldCheck, HeartPulse, Phone } from "lucide-react";
 import { useLanguage } from "@/context/LanguageContext";
+import { useModal } from "@/context/ModalContext";
 
 export default function Doctors() {
   const { t } = useLanguage();
+  const { openConsultation } = useModal();
   return (
     <section id="doctors" className="py-24 relative overflow-hidden">
       {/* 50px Grid Background Pattern */}
@@ -86,10 +88,22 @@ export default function Doctors() {
                 </li>
               </ul>
 
-              <a href="#contact" className="inline-flex items-center justify-center gap-2 w-full md:w-auto px-8 py-3.5 bg-slate-900 text-white rounded-xl font-semibold hover:bg-primary-600 transition-colors shadow-md hover:shadow-lg group/btn">
-                {t("doctors.button")}
-                <ArrowRight size={18} className="group-hover/btn:translate-x-1 transition-transform" />
-              </a>
+              <div className="flex flex-col md:flex-row items-center gap-4">
+                <button
+                  onClick={openConsultation}
+                  className="inline-flex items-center justify-center gap-2 w-full md:w-auto px-8 py-3.5 bg-slate-900 text-white rounded-xl font-semibold hover:bg-primary-600 transition-colors shadow-md hover:shadow-lg group/btn"
+                >
+                  {t("doctors.button")}
+                  <ArrowRight size={18} className="group-hover/btn:translate-x-1 transition-transform" />
+                </button>
+                <a
+                  href={`tel:${t("common.phoneNumberRaw")}`}
+                  className="inline-flex items-center justify-center gap-2 w-full md:w-auto px-6 py-3.5 bg-primary-50 text-primary-700 rounded-xl font-bold hover:bg-primary-100 transition-colors group/call"
+                >
+                  <Phone size={18} className="fill-primary-600 group-hover/call:animate-bounce" />
+                  {t("common.phoneNumber")}
+                </a>
+              </div>
             </div>
           </div>
 

@@ -2,11 +2,13 @@
 
 import Image from "next/image";
 import Link from "next/link";
-import { ArrowRight, CheckCircle2 } from "lucide-react";
+import { ArrowRight, CheckCircle2, Phone } from "lucide-react";
 import { useLanguage } from "@/context/LanguageContext";
+import { useModal } from "@/context/ModalContext";
 
 export default function Hero() {
   const { t } = useLanguage();
+  const { openConsultation } = useModal();
   return (
     <section
 
@@ -15,7 +17,9 @@ export default function Hero() {
         backgroundSize: "cover",
         backgroundPosition: "center",
       }}
-      className="relative pt-24 pb-20 md:pt-32 md:pb-28 overflow-hidden bg-slate-50">
+      className="relative pt-24 pb-20 md:pt-32 md:pb-28 overflow-hidden bg-slate-50"
+      id="hero"
+    >
       {/* Decorative background blurs */}
       <div className="absolute top-0 left-0 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-primary-100/40 rounded-full blur-3xl opacity-50 z-0 pointer-events-none"></div>
       <div className="absolute bottom-0 right-0 translate-x-1/3 translate-y-1/3 w-[600px] h-[600px] bg-blue-100/50 rounded-full blur-3xl opacity-50 z-0 pointer-events-none"></div>
@@ -44,14 +48,31 @@ export default function Hero() {
               {t("hero.description")}
             </p>
 
-            <div className="flex flex-col sm:flex-row items-center justify-center gap-4 mb-10">
-              <Link href="#contact" className="w-full sm:w-auto inline-flex justify-center items-center gap-2 bg-primary-600 text-white px-8 py-4 rounded-full text-base font-semibold hover:bg-primary-600 transition-all shadow-lg hover:shadow-xl hover:-translate-y-0.5 group">
+            <div className="flex flex-col sm:flex-row items-center justify-center gap-4 mb-6">
+              <button
+                onClick={openConsultation}
+                className="w-full sm:w-auto inline-flex justify-center items-center gap-2 bg-primary-600 text-white px-8 py-4 rounded-full text-base font-semibold hover:bg-primary-600 transition-all shadow-lg hover:shadow-xl hover:-translate-y-0.5 group"
+              >
                 {t("hero.bookVisit")}
                 <ArrowRight size={18} className="group-hover:translate-x-1 transition-transform" />
-              </Link>
-              <Link href="#contact" className="w-full sm:w-auto inline-flex justify-center items-center gap-2 bg-white text-slate-800 border border-slate-200 px-8 py-4 rounded-full text-base font-semibold hover:bg-slate-50 transition-all shadow-sm hover:border-slate-300">
+              </button>
+              <button
+                onClick={openConsultation}
+                className="w-full sm:w-auto inline-flex justify-center items-center gap-2 bg-white text-slate-800 border border-slate-200 px-8 py-4 rounded-full text-base font-semibold hover:bg-slate-50 transition-all shadow-sm hover:border-slate-300"
+              >
                 {t("hero.freeConsultation")}
-              </Link>
+              </button>
+            </div>
+
+            {/* Quick Call Link in Hero */}
+            <div className="mb-10 flex items-center justify-center">
+              <a
+                href={`tel:${t("common.phoneNumberRaw")}`}
+                className="inline-flex items-center gap-2 text-primary-700 bg-primary-50/50 hover:bg-primary-50 px-5 py-2.5 rounded-full transition-all border border-primary-100 group/hero-phone"
+              >
+                <Phone size={16} className="fill-primary-600 group-hover/hero-phone:scale-110 transition-transform" />
+                <span className="font-bold text-lg">{t("common.phoneNumber")}</span>
+              </a>
             </div>
 
             <div className="flex flex-wrap items-center justify-center gap-3 sm:gap-4 text-sm font-medium text-slate-700">

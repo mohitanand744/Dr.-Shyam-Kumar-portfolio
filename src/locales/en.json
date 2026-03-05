@@ -1,4 +1,8 @@
 {
+  "common": {
+    "phoneNumber": "+91 73689 35837",
+    "phoneNumberRaw": "+917368935837"
+  },
   "navbar": {
     "callForAppt": "Call for Appointment / Home Visit",
     "address": "New Jaganpura, Patna 800027",
@@ -12,23 +16,23 @@
   },
   "hero": {
     "badge": "Accepting Home Visit Appointments in Patna",
-    "heading1": "Advanced healing for",
-    "heading2": "all kinds of diseases.",
-    "description": "Experience modern machines and advanced physiotherapy treatments designed to release stuck nerves and effectively treat your pain—completely free of side effects.",
+    "heading1": "Best Physiotherapy Treatment in Patna for",
+    "heading2": "Permanent Pain Relief.",
+    "description": "Benefit from full-featured modern machines and advanced physiotherapy treatments designed to release stuck nerves and effectively treat your pain—completely free of side effects.",
     "bookVisit": "Book Home Visit",
     "freeConsultation": "Free Consultation",
     "noSideEffects": "No Side Effects",
     "modernEquipment": "Modern Equipment",
     "homeVisits": "Home Visits",
-    "experienceYears": "10+ Years",
-    "experienceText": "Experience"
+    "experienceYears": "Full",
+    "experienceText": "Care"
   },
   "about": {
-    "badgeYears": "10+",
-    "badgeText": "Years Experience",
-    "subtitle": "About The Clinic",
-    "title": "Specialized Physiotherapy Services",
-    "description": "Dr. Shyam Kumar Physiotherapy Consultant offers specialized treatments for a wide variety of diseases. From relieving stuck nerves to complex post-accident rehabilitation, our mission is to eliminate pain and restore function—all without side effects.",
+    "badgeYears": "Full",
+    "badgeText": "Care",
+    "subtitle": "Best Physiotherapist in Patna",
+    "title": "Advanced Physiotherapy Clinic & Home Visits",
+    "description": "Dr. Shyam Kumar is a highly qualified physiotherapy consultant in Patna specializing in neuro-rehabilitation, orthopedic care, and sports injuries. We offer modern machines and hand-on therapies to treat back pain, paralysis, and nerve issues without side effects—right in his clinic or at your home.",
     "cond1": "Neck & Back Pain",
     "cond2": "Knee & Joint Pain",
     "cond3": "Frozen Shoulder",
@@ -40,8 +44,8 @@
     "cond9": "Knee Replacement Rehab"
   },
   "services": {
-    "title": "Our Treatments & Therapies",
-    "description": "We provide comprehensive care using advanced techniques and modern equipment to help you regain mobility and live a pain-free life.",
+    "title": "Specialized Treatments & Neuro-Rehabilitation",
+    "description": "We are experts in treating complex neurological and orthopedic conditions using advanced manual therapy and modern electrotherapy techniques in Patna.",
     "conditionsTitle": "Conditions We Treat",
     "cond1": "Neck & Back Pain",
     "cond2": "Knee & Joint Pain",
@@ -66,7 +70,7 @@
   "doctors": {
     "subtitle": "Expert Care",
     "title": "Meet Dr. Shyam Kumar",
-    "description": "Highly qualified and experienced physiotherapist dedicated to your recovery, mobility, and overall well-being.",
+    "description": "Highly qualified physiotherapist dedicated to your full recovery, mobility, and overall well-being.",
     "badge": "Lead Consultant & Founder",
     "name": "Dr. Shyam Kumar",
     "role": "Chief Physiotherapy Consultant",
@@ -98,7 +102,7 @@
     "linkDoctors": "Meet Dr. Shyam Kumar",
     "linkFAQ": "FAQs",
     "contactTitle": "Contact & Location",
-    "address": "New Jaganpura bharat petroleum near kotak mahindra bank, 800027 Patna",
+    "address": "New Jaganpura bharat petroleum near kotak mahindra bank, Patna 800027",
     "call": "Call for Appointment",
     "freeConsultation": "Free Consultation Available",
     "copyright": "© {year} Dr. Shyam Kumar Physiotherapy Consultant. All rights reserved."
@@ -130,5 +134,20 @@
       "comment": "Truly the best physiotherapy consultant in Patna. The non-invasive treatments are highly effective and safe. My mobility has improved significantly.",
       "rating": "4.8"
     }
+  },
+  "modal": {
+    "title": "Free Consultation",
+    "subtitle": "Fill out the form below and we'll get back to you shortly.",
+    "nameLabel": "Full Name",
+    "namePlaceholder": "Enter your name",
+    "ageLabel": "Age",
+    "agePlaceholder": "Enter your age",
+    "issueLabel": "Describe Your Issue",
+    "issuePlaceholder": "Briefly describe your pain or condition",
+    "submit": "Submit Request",
+    "sending": "Sending...",
+    "success": "Request sent successfully! We will contact you soon.",
+    "error": "Something went wrong. Please try calling instead.",
+    "orCallUs": "OR call Dr. Shyam Kumar directly at"
   }
 }

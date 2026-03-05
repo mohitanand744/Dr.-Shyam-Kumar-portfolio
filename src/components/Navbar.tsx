@@ -4,10 +4,12 @@ import Link from "next/link";
 import { useState } from "react";
 import { Phone, MapPin, Menu, X, Languages } from "lucide-react";
 import { useLanguage } from "@/context/LanguageContext";
+import { useModal } from "@/context/ModalContext";
 
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
   const { t, language, toggleLanguage } = useLanguage();
+  const { openConsultation } = useModal();
 
   const toggleMenu = () => {
     setIsOpen(!isOpen);
@@ -51,8 +53,9 @@ export default function Navbar() {
             <span className="font-medium tracking-wide">{t("navbar.callForAppt")}</span>
           </div>
           <div className="flex items-center gap-3">
-            <div className="hidden sm:flex items-center gap-1.5 opacity-90 hover:opacity-100 ff transition-opacity">
-              <a href="tel:+919000000000" className="font-semibold">+91 XXXXXXXXXX</a>
+            <div className="flex items-center gap-2">
+              <Phone size={14} className="fill-primary-600 text-primary-600" />
+              <a href={`tel:${t("common.phoneNumberRaw")}`} className="font-semibold">{t("common.phoneNumber")}</a>
             </div>
             <span className="hidden sm:inline-block w-px h-4 bg-white/30"></span>
             <div className="flex items-center gap-1.5 opacity-90">
@@ -81,9 +84,12 @@ export default function Navbar() {
             <Link href="#services" className="hover:text-primary-600 transition-colors py-2">{t("navbar.navServices")}</Link>
             <Link href="#doctors" className="hover:text-primary-600 transition-colors py-2">{t("navbar.navDoctor")}</Link>
             <Link href="#faq" className="hover:text-primary-600 transition-colors py-2">{t("navbar.navFAQ")}</Link>
-            <a href="#contact" className="ml-2 bg-slate-900 text-white px-6 py-2.5 rounded-full hover:bg-primary-600 transition-all font-bold shadow-md hover:shadow-lg inline-block hover:-translate-y-0.5">
+            <button
+              onClick={openConsultation}
+              className="ml-2 bg-primary-600 text-white px-6 py-2.5 rounded-full transition-all font-bold shadow-md hover:shadow-lg inline-block hover:-translate-y-0.5"
+            >
               {t("navbar.freeConsultation")}
-            </a>
+            </button>
             <LanguageToggle className="ml-2" />
           </div>
 
@@ -137,13 +143,15 @@ export default function Navbar() {
             {t("navbar.navFAQ")}
           </Link>
           <div className="pt-2 pb-2 mt-2 border-t border-slate-100 px-4">
-            <a
-              href="#contact"
+            <button
+              onClick={() => {
+                setIsOpen(false);
+                openConsultation();
+              }}
               className="flex justify-center w-full bg-primary-600 text-white px-6 py-3 rounded-full font-bold shadow-md"
-              onClick={() => setIsOpen(false)}
             >
               {t("navbar.freeConsultation")}
-            </a>
+            </button>
           </div>
         </div>
       </div>

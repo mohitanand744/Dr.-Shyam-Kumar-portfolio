@@ -4,28 +4,55 @@ import "./globals.css";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import { LanguageProvider } from "@/context/LanguageContext";
+import { ModalProvider } from "@/context/ModalContext";
+import ConsultationModal from "@/components/ConsultationModal";
 
 const inter = Inter({
   variable: "--font-inter",
   subsets: ["latin"],
 });
 
+import StructuredData from "@/components/StructuredData";
+
 export const metadata: Metadata = {
-  title: "Dr. Shyam Kumar | Physiotherapy Consultant Patna | Home Visits Available",
-  description: "Professional physiotherapy services by Dr. Shyam Kumar in Patna. Specialist in Neck Pain, Back Pain, Sports Injuries, Stroke & Neuro Rehabilitation. Book your home visit today for modern, safe, and effective treatment.",
-  keywords: ["Physiotherapy Patna", "Dr. Shyam Kumar", "Home Visit Physiotherapy Patna", "Best Physiotherapist Patna", "Neck Pain Treatment Patna", "Back Pain Specialist", "Sports Injury Rehab", "Post-Surgery Rehabilitation"],
+  title: "Dr. Shyam Kumar | Best Physiotherapist in Patna | Home Visit Physiotherapy",
+  description: "Advanced physiotherapy by Dr. Shyam Kumar in Patna. Expert in Back Pain, Slip Disc, Sciatica, Nerve Compression, Paralysis, Stroke Rehab & Sports Injuries. Reliable home visits available anywhere in Patna. Modern technology, effective results, zero side effects.",
+  keywords: [
+    "Physiotherapy Patna",
+    "Best Physiotherapist in Patna",
+    "Home Visit Physiotherapy Patna",
+    "Physiotherapist near me",
+    "Back Pain Treatment Patna",
+    "Slip Disc Specialist Patna",
+    "Sciatica Treatment Patna",
+    "Paralysis Rehabilitation Patna",
+    "Stroke Treatment Patna",
+    "Nerve Pain Doctor Patna",
+    "Neck Pain Treatment",
+    "Sports Injury Physio Patna",
+    "Knee Pain Treatment Patna",
+    "Frozen Shoulder treatment",
+    "Cerebral Palsy treatment Patna",
+    "Post-accidental rehab Patna",
+    "Manual Therapy Patna",
+    "Neurological Physiotherapy Patna"
+  ],
   authors: [{ name: "Dr. Shyam Kumar" }],
   creator: "Dr. Shyam Kumar",
   publisher: "Dr. Shyam Kumar Physiotherapy Clinic",
+  metadataBase: new URL("https://drshyamkumar.com"), // Update with actual domain
+  alternates: {
+    canonical: "/",
+  },
   formatDetection: {
     email: false,
     address: true,
     telephone: true,
   },
   openGraph: {
-    title: "Dr. Shyam Kumar | Physiotherapy Consultant Patna",
-    description: "Expert physiotherapy care in Patna. Specialized in pain management, neuro rehab, and home visits.",
-    url: "https://drshyamkumar.com", // Replace with actual domain when available
+    title: "Dr. Shyam Kumar | Best Physiotherapy Consultant in Patna",
+    description: "Expert physiotherapy care and home visits in Patna. Specialized in pain management, neuro rehab, and complex orthopedic conditions.",
+    url: "https://drshyamkumar.com",
     siteName: "Dr. Shyam Kumar Physiotherapy",
     images: [
       {
@@ -40,8 +67,8 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Dr. Shyam Kumar | Physiotherapy Consultant Patna",
-    description: "Expert physiotherapy care and home visits in Patna. Safe and effective pain relief.",
+    title: "Dr. Shyam Kumar | Expert Physiotherapist in Patna",
+    description: "Modern physiotherapy treatments and home visits in Patna for Back pain, Neuro rehab, and Sports injuries.",
     images: ["/images/hero.png"],
   },
   robots: {
@@ -70,11 +97,15 @@ export default function RootLayout({
     <html lang="en">
       <body cz-shortcut-listen="true" className={`${inter.variable} font-sans antialiased min-h-screen flex flex-col`}>
         <LanguageProvider>
-          <Navbar />
-          <main className="flex-grow">
-            {children}
-          </main>
-          <Footer />
+          <ModalProvider>
+            <Navbar />
+            <main className="flex-grow">
+              {children}
+            </main>
+            <Footer />
+            <ConsultationModal />
+            <StructuredData />
+          </ModalProvider>
         </LanguageProvider>
       </body>
     </html>
