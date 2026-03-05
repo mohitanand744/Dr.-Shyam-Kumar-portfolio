@@ -43,18 +43,43 @@ export default function ConsultationModal() {
     e.preventDefault();
     setIsSubmitting(true);
 
-    // Simulate API call
-    await new Promise((resolve) => setTimeout(resolve, 1500));
+    try {
+      const response = await fetch("https://formsubmit.co/ajax/15shyamsah@gmail.com", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+          Accept: "application/json",
+        },
+        body: JSON.stringify({
+          _subject: `New Consultation Request: ${formData.name}`,
+          Name: formData.name,
+          Age: formData.age,
+          Issue: formData.issue,
+          _template: "table",
+          _captcha: "false" // Disabling captcha for better UX, but can be enabled if spam occurs
+        }),
+      });
 
-    setIsSubmitting(false);
-    setIsSuccess(true);
+      const result = await response.json();
 
-    // Reset after success
-    setTimeout(() => {
-      setIsSuccess(false);
-      setFormData({ name: "", age: "", issue: "" });
-      closeConsultation();
-    }, 3000);
+      if (result.success === "true" || response.ok) {
+        setIsSuccess(true);
+        setFormData({ name: "", age: "", issue: "" });
+
+        // Reset and close after success
+        setTimeout(() => {
+          setIsSuccess(false);
+          closeConsultation();
+        }, 4000);
+      } else {
+        throw new Error("Form submission failed");
+      }
+    } catch (error) {
+      console.error("Error submitting form:", error);
+      alert(t("modal.error"));
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   return (
