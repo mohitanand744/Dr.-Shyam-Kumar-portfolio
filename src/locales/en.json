@@ -1,11 +1,13 @@
 {
   "common": {
     "phoneNumber": "+91 73689 35837",
-    "phoneNumberRaw": "+917368935837"
+    "phoneNumberRaw": "+917368935837",
+    "email": "15shyamsah@gmail.com",
+    "address": "Sitamarhi, Bihar, 843302"
   },
   "navbar": {
     "callForAppt": "Available for Full-time & Internship Roles",
-    "address": "Patna, Bihar 800027",
+    "address": "Sitamarhi, Bihar 843302",
     "title": "Dr. Shyam Kumar",
     "subtitle": "Physiotherapist Candidate",
     "navAbout": "Summary",
@@ -102,10 +104,34 @@
     "linkDoctors": "My Profile",
     "linkFAQ": "Education Background",
     "contactTitle": "Contact Information",
-    "address": "Patna, Bihar 800027 (Open to Relocate)",
+    "address": "Sitamarhi, Bihar, 843302 (Open to Relocate)",
+    "email": "15shyamsah@gmail.com",
     "call": "Call me for opportunities",
     "freeConsultation": "Resume Available Upon Request",
     "copyright": "© {year} Dr. Shyam Kumar. Portfolio."
+  },
+  "resume": {
+    "subtitle": "My Qualifications",
+    "title": "Resume & Experience",
+    "educationTitle": "Academic Qualifications",
+    "edu1Degree": "Bachelor of Physiotherapy (BPT)",
+    "edu1Inst": "Health Dept. Gov. of Bihar",
+    "edu1Year": "2021 - 2025",
+    "edu1Score": "Score: 80%",
+    "edu2Degree": "12th Standard",
+    "edu2Inst": "BSEB Patna",
+    "edu2Year": "2021",
+    "edu2Score": "Score: 64%",
+    "edu3Degree": "10th Standard",
+    "edu3Inst": "BSEB Patna",
+    "edu3Year": "2019",
+    "edu3Score": "Score: 65%",
+    "certTitle": "Other Qualifications",
+    "cert1Name": "CPR Training Program",
+    "cert1Org": "Jay Prabha Medanta Super Specialty Hospital",
+    "expTitle": "Work Experience",
+    "exp1Role": "Physiotherapist",
+    "exp1Duration": "1 Year of Experience"
   },
   "testimonials": {
     "title": "Clinical Rotations & Exposure",
