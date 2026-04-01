@@ -3,54 +3,39 @@ export default function StructuredData() {
 
   const jsonLd = {
     "@context": "https://schema.org",
-    "@type": "MedicalBusiness",
-    "name": "Dr. Shyam Kumar Physiotherapy Consultant",
-    "image": "https://drshyamkumar.com/images/hero.png", // Update with actual domain
-    "@id": "https://drshyamkumar.com/#website",
+    "@type": "Person",
+    "name": "Dr. Shyam Kumar",
+    "jobTitle": "Physiotherapist",
     "url": "https://drshyamkumar.com",
+    "image": "https://drshyamkumar.com/images/hero.png", // Update with actual domain
     "telephone": "+91 73689 35837",
-    "priceRange": "$$",
+    "email": "15shyamsah@gmail.com",
     "address": {
       "@type": "PostalAddress",
-      "streetAddress": "New Jaganpura bharat petroleum near kotak mahindra bank",
-      "addressLocality": "Patna",
-      "addressRegion": "BR",
-      "postalCode": "800027",
+      "addressLocality": "Sitamarhi",
+      "addressRegion": "Bihar",
+      "postalCode": "843302",
       "addressCountry": "IN"
     },
-    "geo": {
-      "@type": "GeoCoordinates",
-      "latitude": 25.5684, // Approximate for Jaganpura
-      "longitude": 85.1585
-    },
-    "openingHoursSpecification": {
-      "@type": "OpeningHoursSpecification",
-      "dayOfWeek": [
-        "Monday",
-        "Tuesday",
-        "Wednesday",
-        "Thursday",
-        "Friday",
-        "Saturday",
-        "Sunday"
-      ],
-      "opens": "07:00",
-      "closes": "21:00"
-    },
-    "sameAs": [
-      // Add social media links if any
+    "alumniOf": [
+      {
+        "@type": "EducationalOrganization",
+        "name": "Health Dept. Gov. of Bihar"
+      }
     ],
-    "founder": {
-      "@type": "Person",
-      "name": "Dr. Shyam Kumar",
-      "jobTitle": "Physiotherapy Consultant"
-    },
-    "medicalSpecialty": [
+    "knowsAbout": [
       "Physiotherapy",
-      "Physical Therapy",
       "Rehabilitation",
-      "NeuroRehabilitation",
-      "SportsMedicine"
+      "Neuro-Rehabilitation",
+      "Orthopedic Rehab",
+      "Sports Injury Physiotherapy"
+    ],
+    "seeks": [
+      {
+        "@type": "Demand",
+        "title": "Physiotherapist Full-Time Role",
+        "description": "Seeking a clinical physiotherapy role in a reputed hospital or clinic."
+      }
     ]
   };
 

@@ -15,31 +15,24 @@ const inter = Inter({
 import StructuredData from "@/components/StructuredData";
 
 export const metadata: Metadata = {
-  title: "Dr. Shyam Kumar | Best Physiotherapist in Patna | Home Visit Physiotherapy",
-  description: "Advanced physiotherapy by Dr. Shyam Kumar in Patna. Expert in Back Pain, Slip Disc, Sciatica, Nerve Compression, Paralysis, Stroke Rehab & Sports Injuries. Reliable home visits available anywhere in Patna. Modern technology, effective results, zero side effects.",
+  title: "Dr. Shyam Kumar | Professional Physiotherapist Portfolio",
+  description: "Professional portfolio of Dr. Shyam Kumar, a dedicated Physiotherapist with expertise in neuro-rehabilitation, orthopedics, and sports injuries. Actively seeking clinical roles and opportunities.",
   keywords: [
-    "Physiotherapy Patna",
-    "Best Physiotherapist in Patna",
-    "Home Visit Physiotherapy Patna",
-    "Physiotherapist near me",
-    "Back Pain Treatment Patna",
-    "Slip Disc Specialist Patna",
-    "Sciatica Treatment Patna",
-    "Paralysis Rehabilitation Patna",
-    "Stroke Treatment Patna",
-    "Nerve Pain Doctor Patna",
-    "Neck Pain Treatment",
-    "Sports Injury Physio Patna",
-    "Knee Pain Treatment Patna",
-    "Frozen Shoulder treatment",
-    "Cerebral Palsy treatment Patna",
-    "Post-accidental rehab Patna",
-    "Manual Therapy Patna",
-    "Neurological Physiotherapy Patna"
+    "Dr. Shyam Kumar",
+    "Physiotherapist Portfolio",
+    "Physiotherapy Internship",
+    "Physiotherapist Candidate",
+    "BPT Graduate",
+    "Clinical Physiotherapist",
+    "Neuro-Rehabilitation",
+    "Orthopedic Rehab",
+    "Sports Injury Physiotherapy",
+    "Hire a Physiotherapist",
+    "Physiotherapy Resume"
   ],
   authors: [{ name: "Dr. Shyam Kumar" }],
   creator: "Dr. Shyam Kumar",
-  publisher: "Dr. Shyam Kumar Physiotherapy Clinic",
+  publisher: "Dr. Shyam Kumar Portfolio",
   metadataBase: new URL("https://drshyamkumar.com"), // Update with actual domain
   alternates: {
     canonical: "/",
@@ -50,16 +43,16 @@ export const metadata: Metadata = {
     telephone: true,
   },
   openGraph: {
-    title: "Dr. Shyam Kumar | Best Physiotherapy Consultant in Patna",
-    description: "Expert physiotherapy care and home visits in Patna. Specialized in pain management, neuro rehab, and complex orthopedic conditions.",
+    title: "Dr. Shyam Kumar | Physiotherapist Portfolio & Resume",
+    description: "Explore the professional qualifications, clinical skills, and experience of Dr. Shyam Kumar, an aspiring physiotherapist seeking clinical roles.",
     url: "https://drshyamkumar.com",
-    siteName: "Dr. Shyam Kumar Physiotherapy",
+    siteName: "Dr. Shyam Kumar Portfolio",
     images: [
       {
         url: "/images/hero.png",
         width: 1200,
         height: 630,
-        alt: "Dr. Shyam Kumar Physiotherapy Clinic Patna",
+        alt: "Dr. Shyam Kumar Physiotherapist",
       },
     ],
     locale: "en_IN",
@@ -67,8 +60,8 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Dr. Shyam Kumar | Expert Physiotherapist in Patna",
-    description: "Modern physiotherapy treatments and home visits in Patna for Back pain, Neuro rehab, and Sports injuries.",
+    title: "Dr. Shyam Kumar | Physiotherapist Professional Profile",
+    description: "BPT Graduate specializing in modern physiotherapy treatments, actively seeking clinical opportunities.",
     images: ["/images/hero.png"],
   },
   robots: {
