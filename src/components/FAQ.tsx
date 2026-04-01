@@ -1,7 +1,7 @@
 "use client";
 
 import { useState } from "react";
-import { HelpCircle, ChevronDown } from "lucide-react";
+import { GraduationCap, ChevronDown } from "lucide-react";
 import { useLanguage } from "@/context/LanguageContext";
 
 export default function FAQ() {
@@ -36,7 +36,7 @@ export default function FAQ() {
       <div className="container mx-auto px-4 max-w-4xl">
         <div className="text-center mb-16">
           <h2 className="text-3xl md:text-4xl font-bold text-slate-900 mb-4 tracking-tight flex items-center justify-center gap-3">
-            <HelpCircle className="text-primary-600" size={36} /> {t("faq.title")}
+            <GraduationCap className="text-primary-600" size={36} /> {t("faq.title")}
           </h2>
           <p className="text-lg text-slate-600">
             {t("faq.description")}

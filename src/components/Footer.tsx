@@ -52,15 +52,6 @@ export default function Footer() {
                   {t("footer.call")}: <span className="font-semibold text-white">{t("common.phoneNumber")}</span>
                 </a>
               </li>
-              <li className="flex items-center gap-3">
-                <Clock className="text-primary-500 shrink-0" size={20} />
-                <button
-                  onClick={openConsultation}
-                  className="font-semibold text-white hover:text-primary-400 transition-colors text-left"
-                >
-                  {t("footer.freeConsultation")}
-                </button>
-              </li>
             </ul>
           </div>
 

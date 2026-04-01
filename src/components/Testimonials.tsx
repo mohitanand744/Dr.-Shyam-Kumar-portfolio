@@ -52,7 +52,7 @@ export default function Testimonials() {
             {t("testimonials.title")}
           </span>
           <h2 className="text-3xl md:text-5xl font-extrabold text-slate-900 mb-6 tracking-tight">
-            Patient Stories
+            {t("testimonials.title")}
           </h2>
           <p className="text-lg text-slate-600 leading-relaxed">
             {t("testimonials.description")}
@@ -150,7 +150,7 @@ export default function Testimonials() {
               </div>
             </div>
             <div className="w-px h-8 bg-slate-200"></div>
-            <p className="text-sm font-bold text-slate-600">Based on 150+ Patient Success Stories</p>
+            <p className="text-sm font-bold text-slate-600">Committed to Clinical Excellence</p>
           </div>
         </div>
       </div>
